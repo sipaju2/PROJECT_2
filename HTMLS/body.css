@@ -1,0 +1,16 @@
+body {
+    background: URL('https://raw.githubusercontent.com/sipaju2/Homework/master/africapic.JPG') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding:20px 80px;
+  }
+
+  img {
+    position: initial ;
+    margin-left: 130px;
+    right: 500px;
+    top: 200px;
+    z-index: -1;
+  }

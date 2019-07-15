@@ -1,0 +1,77 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>AFRICA TRIP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="/bootstrap.css">
+  <!--<link rel="stylesheet" href="style.css">
+  --></head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">HOME
+            <img class="nav-AFI" src="">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>DATA DETAILS</h1>
+      <p>"You know you are truly alive when you're living among lions"</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">COUNTRY SEARCH</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a country</label>
+                        <input class="form-control" id="country" type="text" placeholder="Algeria">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="submit" class="btn btn-default">SUBMIT</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="AFI-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">COUNTRY</th>
+                  <th class="table-head">REGION</th>
+                  <th class="table-head">STATE CAPITAL</th>
+                  <th class="table-head">LOCATION</th>                  
+                  <th class="table-head">PRIMARY LANGUAGE</th>
+                  <th class="table-head">POPULATION</th>
+                  <th class="table-head">NATURAL RESOURCES</th>
+                  <th class="table-head">GDP PER CAPITAL</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>

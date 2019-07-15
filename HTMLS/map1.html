@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<div>
+  <LInk rel="stylesheet" type='text/css' href='style.css'>
+  <a href="/" id="logo3">REGIONAL MAP</a>
+  <ul id="menu">
+    <li><a href="index.html" target=""><span>HOME</span></a></li>
+    <li><a href="country.html" target=""><span>HISTORY</span></a></li>
+    <li><a href="Nat_Res.html" target=""><span>NATURAL RESOURCES</span></a></li>
+    <li><a href="gallery.html" target=""><span>GALLERY</span></a></li>
+
+  </ul>
+
+</div>
+<link rel="stylesheet" media="all" href="./jquery-jvectormap.css" />
+<script src="./jquery-1.8.2.js"></script>
+<script src="./jquery-jvectormap.js"></script>
+<script src="./jquery-mousewheel.js"></script>
+
+<script src="./jvectormap.js"></script>
+
+<script src="./abstract-element.js"></script>
+<script src="./abstract-canvas-element.js"></script>
+<script src="./abstract-shape-element.js"></script>
+
+<script src="./svg-element.js"></script>
+<script src="./svg-group-element.js"></script>
+<script src="./svg-canvas-element.js"></script>
+<script src="./svg-shape-element.js"></script>
+<script src="./svg-path-element.js"></script>
+<script src="./svg-circle-element.js"></script>
+<script src="./svg-image-element.js"></script>
+<script src="./svg-text-element.js"></script>
+
+<script src="./vml-element.js"></script>
+<script src="./vml-group-element.js"></script>
+<script src="./vml-canvas-element.js"></script>
+<script src="./vml-shape-element.js"></script>
+<script src="./vml-path-element.js"></script>
+<script src="./vml-circle-element.js"></script>
+<script src="./vml-image-element.js"></script>
+
+<script src="./map-object.js"></script>
+<script src="./region.js"></script>
+<script src="./marker.js"></script>
+
+<script src="./vector-canvas.js"></script>
+<script src="./simple-scale.js"></script>
+<script src="./ordinal-scale.js"></script>
+<script src="./numeric-scale.js"></script>
+<script src="./color-scale.js"></script>
+<script src="./legend.js"></script>
+<script src="./data-series.js"></script>
+<script src="./proj.js"></script>
+<script src="./map.js"></script>
+
+<script src="./jquery-jvectormap-world-mill-en.js"></script>
+
+
+
+
+<!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>-->
+
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* set map, body, and html to 100% of the screen size */
+  #map,
+  body,
+  html {
+    height: 100%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #World-map {
+    alt: center;
+    left: 200px;
+    padding-right: 100px;
+
+  }
+</style>
+
+<!-- Our CSS -->
+<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+
+
+<body>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- The div where we will inject our map
+<div id="map"></div>-->
+
+  <!-- API key -->
+  <!--<script type="text/javascript" src="config.js"></script>-->
+  <!-- Our JS -->
+  <!--<script type="text/javascript" src="logic.js"></script>-->
+
+  <div class="col-md-12">
+    <div id='world-map' style="width: 1500px; height: 400px; image-orientation: center">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="Summary" style="animation: cubic-bezier(0.165, 0.84, 0.44, 1);
+        color:brown;
+        font-style:bold;
+        font-weight: 100;
+        font-size: 20px;
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: 30px 0px 30px 0px;">CLICK COUNTRY FOR COUNTY'S DETAILS</p>
+            </div>
+        </div>
+      
+<h6>Click The + and - Below to Adjust the Map View</h6>
+
+      <script>
+        var Data1 = {
+          "NG": 1.1,
+          "EG": 1.1,
+          "ET": 1.1,
+          "CD": 1.1,
+          "ZA": 1.1,
+          "TZ": 1.1,
+          "KE": 1.1,
+          "DZ": 1.1,
+          "SD": 1.1,
+          "UG": 1.1,
+          "MA": 1.1,
+          "GH": 1.1,
+          "AO": 1.1,
+          "MZ": 1.1,
+          "CI": 1.1,
+          "MG": 1.1,
+          "CM": 1.1,
+          "NE": 1.1,
+          "BF": 1.1,
+          "ML": 1.1,
+          "MW": 1.1,
+          "ZM": 1.1,
+          "SN": 1.1,
+          "TD": 1.1,
+          "SO": 1.1,
+          "ZW": 1.1,
+          "SS": 1.1,
+          "RW": 1.1,
+          "GN": 1.1,
+          "BJ": 1.1,
+          "TN": 1.1,
+          "BI": 1.1,
+          "SL": 1.1,
+          "TG": 1.1,
+          "LY": 1.1,
+          "CF": 1.1,
+          "CG": 1.1,
+          "LR": 1.1,
+          "MR": 1.1,
+          "ER": 1.1,
+          "NA": 1.1,
+          "GM": 1.1,
+          "BW": 1.1,
+          "GA": 1.1,
+          "LS": 1.1,
+          "GW": 1.1,
+          "SZ": 1.1,
+          "GQ": 1.1,
+          "MU": 1.1,
+          "DJ": 1.1,
+          "KM": 1.1,
+          "CV": 1.1,
+          "ST": 1.1,
+          "SC": 1.1
+        };
+        var Data2 = {
+          "NG": 'Capital: Abuja  --->  Govt: PR - Democracy  --->  Common Lang: English  ---> Population: 201m  ---> Landsize: 91km² ',
+          "EG": 'Capital: Cairo  --->  Govt: Military  --->  Common Lang: Arabic  ---> Population: 99m  ---> Landsize: 100km² ',
+          "ET": 'Capital: Addis Ababa  --->  Govt: Dictator  --->  Common Lang: Amharic  ---> Population: 99m  ---> Landsize: 100km² ',
+          "CD": 'Capital: Brazzaville  --->  Govt: Dictator  --->  Common Lang: French  ---> Population: 87m  ---> Landsize: 227km² ',
+          "ZA": 'Capital: Pretoria  --->  Govt: PA - Democracy  --->  Common Lang: English  ---> Population: 58m  ---> Landsize: 121km² ',
+          "TZ": 'Capital: Dodoma  --->  Govt: Dictator  --->  Common Lang: English  ---> Population: 56m  ---> Landsize: 89km² ',
+          "KE": 'Capital: Nairobi  --->  Govt: PR - Democracy  --->  Common Lang: English  ---> Population: 53m  ---> Landsize: 57km² ',
+          "DZ": 'Capital: Algiers  --->  Govt: Military  --->  Common Lang: Arabic  ---> Population: 43m  ---> Landsize: 238km² ',
+          "SD": 'Capital: Khartoum  --->  Govt: Dictator  --->  Common Lang: Arabic  ---> Population: 42m  ---> Landsize: 186km² ',
+          "UG": 'Capital: Kampala  --->  Govt: Dictator  --->  Common Lang: English  ---> Population: 40m  ---> Landsize: 20km² ',
+          "MA": 'Capital: Rabat  --->  Govt: Monarchy  --->  Common Lang: Arabic  ---> Population: 35m  ---> Landsize: 45km² ',
+          "GH": 'Capital: Accra  --->  Govt: PR - Democracy  --->  Common Lang: English  ---> Population: 30m  ---> Landsize: 23km² ',
+          "AO": 'Capital: Luanda  --->  Govt: Dictator  --->  Common Lang: Portuguese  ---> Population: 30m  ---> Landsize: 125km² ',
+          "MZ": 'Capital: Maputo  --->  Govt: Dictator  --->  Common Lang: Portuguese  ---> Population: 28m  ---> Landsize: 79km² ',
+          "CI": 'Capital: Yamoussoukro  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 26m  ---> Landsize: 32km² ',
+          "MG": 'Capital: Antananarivo  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 25m  ---> Landsize: 58km² ',
+          "CM": 'Capital: Yaounde  --->  Govt: Dictator  --->  Common Lang: French  ---> Population: 24m  ---> Landsize: 47km² ',
+          "NE": 'Capital: Niamey  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 22m  ---> Landsize: 127km² ',
+          "BF": 'Capital: Ouagadougou  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 21m  ---> Landsize: 27km² ',
+          "ML": 'Capital: Bamako  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 20m  ---> Landsize: 122km² ',
+          "MW": 'Capital: Lilongwe  --->  Govt: PR - Democracy  --->  Common Lang: English  ---> Population: 18m  ---> Landsize: 9km² ',
+          "ZM": 'Capital: Lusaka  --->  Govt: PR - Democracy  --->  Common Lang: English  ---> Population: 17m  ---> Landsize: 74km² ',
+          "SN": 'Capital: Dakar  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 16m  ---> Landsize: 19km² ',
+          "TD": 'Capital: N Djamena  --->  Govt: Dictator  --->  Common Lang: French  ---> Population: 16m  ---> Landsize: 126km² ',
+          "SO": 'Capital: Mogadishu  --->  Govt: Republic  --->  Common Lang: Somali  ---> Population: 15m  ---> Landsize: 63km² ',
+          "ZW": 'Capital: Harare  --->  Govt: Dictator  --->  Common Lang: English  ---> Population: 15m  ---> Landsize: 39km² ',
+          "SS": 'Capital: Khartoum  --->  Govt: Dictator  --->  Common Lang: Arabic  ---> Population: 13m  ---> Landsize: 64km² ',
+          "RW": 'Capital: Kigali  --->  Govt: Military  --->  Common Lang: French  ---> Population: 12m  ---> Landsize: 2km² ',
+          "GN": 'Capital: Conakry  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 12m  ---> Landsize: 25km² ',
+          "BJ": 'Capital: Porto-Novo  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 12m  ---> Landsize: 11km² ',
+          "TN": 'Capital: Tunis  --->  Govt: PR - Democracy  --->  Common Lang: Arabic  ---> Population: 12m  ---> Landsize: 16km² ',
+          "BI": 'Capital: Bujumbura  --->  Govt: Dictator  --->  Common Lang: French  ---> Population: 11m  ---> Landsize: 3km² ',
+          "SL": 'Capital: Freetown  --->  Govt: PR - Democracy  --->  Common Lang: English  ---> Population: 8m  ---> Landsize: 7km² ',
+          "TG": 'Capital: Lomé  --->  Govt: Dictator  --->  Common Lang: French  ---> Population: 8m  ---> Landsize: 5km² ',
+          "LY": 'Capital: Tripoli  --->  Govt: Dictator  --->  Common Lang: Arabic  ---> Population: 7m  ---> Landsize: 176km² ',
+          "CF": 'Capital: Bangui  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 5m  ---> Landsize: 62km² ',
+          "CG": 'Capital: Brazzaville  --->  Govt: Dictator  --->  Common Lang: French  ---> Population: 5m  ---> Landsize: 34km² ',
+          "LR": 'Capital: Monrovia  --->  Govt: PR - Democracy  --->  Common Lang: English  ---> Population: 4m  ---> Landsize: 10km² ',
+          "MR": 'Capital: Nouakchott  --->  Govt: Dictator  --->  Common Lang: Arabic  ---> Population: 4m  ---> Landsize: 103km² ',
+          "ER": 'Capital: Addis Ababa  --->  Govt: Dictator  --->  Common Lang: Amharic  ---> Population: 3m  ---> Landsize: 10km² ',
+          "NA": 'Capital: TBU  --->  Govt: PR - Democracy  --->  Common Lang: TBU  ---> Population: 2m  ---> Landsize: 82km² ',
+          "GM": 'Capital: Banjul  --->  Govt: PR - Democracy  --->  Common Lang: English  ---> Population: 2m  ---> Landsize: 1km² ',
+          "BW": 'Capital: Gaborone  --->  Govt: Dictator  --->  Common Lang: English  ---> Population: 2m  ---> Landsize: 57km² ',
+          "GA": 'Capital: Libreville  --->  Govt: Republic  --->  Common Lang: French  ---> Population: 2m  ---> Landsize: 26km² ',
+          "LS": 'Capital: Maseru  --->  Govt: PA - Democracy  --->  Common Lang: English  ---> Population: 2m  ---> Landsize: 3km² ',
+          "GW": 'Capital: Conakry  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 2m  ---> Landsize: 3km² ',
+          "SZ": 'Capital: Mbabane  --->  Govt: Monarchy  --->  Common Lang: English  ---> Population: 1m  ---> Landsize: 1km² ',
+          "GQ": 'Capital: Malabo  --->  Govt: Dictator  --->  Common Lang: French  ---> Population: 1m  ---> Landsize: 3km² ',
+          "MU": 'Capital: Port Louis  --->  Govt: PA - Democracy  --->  Common Lang: English  ---> Population: 1m  ---> Landsize: 0km² ',
+          "DJ": 'Capital: TBU  --->  Govt: Republic  --->  Common Lang: TBU  ---> Population: 1m  ---> Landsize: 2km² ',
+          "KM": 'Capital: Moroni  --->  Govt: PR - Democracy  --->  Common Lang: French  ---> Population: 1m  ---> Landsize: 0km² ',
+          "CV": 'Capital: Praia  --->  Govt: Republic  --->  Common Lang: Portuguese  ---> Population: 1m  ---> Landsize: 0km² ',
+          "ST": 'Capital: Sao Tome  --->  Govt: PA - Democracy  --->  Common Lang: Portuguese  ---> Population: 0m  ---> Landsize: 0km² ',
+          "SC": 'Capital: Victoria  --->  Govt: Republic  --->  Common Lang: French  ---> Population: 0m  ---> Landsize: 0km² '
+        };
+        $('#world-map').vectorMap({
+          map: 'world_mill_en',
+          panOnDrag: true,
+          focusOn: {
+            x: 0.5,
+            y: 0.5,
+            scale: 2,
+            animate: true
+          },
+          series: {
+            regions: [
+              {
+                values: Data1, Data2,
+                scale: ['#C8EEFF', '#0071A4'],
+                normalizeFunction: 'polynomial'
+              }
+
+            ]
+          },
+          onRegionTipShow: function (e, el, code) {
+            el.html('<b>' + el.html() + '</b></br>' + '<b> Country Details: </b></br>' + '<b>' + Data2[code] + '</b></br>');
+          }
+        });
+      </script>
+      <!--<script>
+        jQuery.noConflict();
+        jQuery(function () {
+          var $ = jQuery;
+
+          $('#focus-Central').click(function () {
+            $('#world-map').vectorMap('set', 'focus', { regions: ['CD', 'AO', 'CM', 'TD', 'CF', 'CG', 'GA', 'GQ', 'ST'], animate: true });
+          });
+          $('#focus-West').click(function () {
+            $('#world-map').vectorMap('set', 'focus', { regions: ['NG', 'GH', 'CI', 'NE', 'BF', 'ML', 'SN', 'GN', 'BJ', 'SL', 'TG', 'LR', 'MR', 'GM', 'GW', 'CV'], animate: true });
+          });
+          $('#focus-East').click(function () {
+            $('#world-map').vectorMap('set', 'focus', { regions: ['ET', 'TZ', 'KE', 'UG', 'MZ', 'MG', 'MW', 'ZM', 'SO', 'ZW', 'SS', 'RW', 'BI', 'ER', 'MU', 'DJ', 'KM', 'SC'], animate: true });
+          });
+          $('#focus-South').click(function () {
+            $('#world-map').vectorMap('set', 'focus', { regions: ['ZA', 'NA', 'BW', 'LS', 'SZ'], animate: true });
+          });
+          $('#focus-North').click(function () {
+            $('#world-map').vectorMap('set', 'focus', { regions: ['EG', 'DZ', 'SD', 'MA', 'TN', 'LY'], animate: true });
+          });
+          $('#focus-init').click(function () {
+            $('#world-map').vectorMap('set', 'focus', { scale: 2, x: 0.5, y: 0.5, animate: true });
+          });
+
+      </script>-->
+    </div>
+  </div>
+  <!--
+  <button id="focus-Central">Focus on Central Africa</button>
+  <button id="focus-West">Focus on West Africa</button>
+  <button id="focus-East">Focus on East Africa</button>
+  <button id="focus-South">Focus on South Africa</button>
+  <button id="focus-North">Focus on North Africa</button>
+  <button id="focus-init">Return to the initial state</button>-->
+</body>
+
+</html>
