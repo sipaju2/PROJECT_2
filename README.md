@@ -22,14 +22,14 @@ The Main Purpose of this project was to connect user to resources and also have 
  
  ### 3-Visualization
   Here we will use D3 and Mapbox to facilitate the visualization of each African Countries with all the following details
-          -Population
-          -Capital
-          -Gdp
-          -Death Rate
-          -Birth Rate
-          -Poverty Rate
-          -Natural Resource
-          -President Name
+          ####-Population
+          ####-Capital
+          ####-Gdp
+          ####-Death Rate
+          ####-Birth Rate
+          ####-Poverty Rate
+          ####-Natural Resource
+          ####-President Name
           
 ## Bonus
  Organizing African Countries per region and having on the Map a specific color for each Region.
