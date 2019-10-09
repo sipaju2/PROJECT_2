@@ -15,8 +15,8 @@ The Main Purpose of this project was to connect user to resources and also have 
   In the first Part of this work we will be finding data needed for our project then load and clean them with python and pandas.
   
 ### 2-ANALYSIS
-  we use Matplotlib foor this part of our project
-   Studing the ration between Death Ratio and Birth Ratio.
+  we use Matplotlib for this part of our project  
+   Studying the ration between Death Ratio and Birth Ratio.
    Analyse the poverty and put them in order ascendant
    Study the GDP and the Population
  
